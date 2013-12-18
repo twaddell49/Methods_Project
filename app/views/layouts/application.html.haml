@@ -1,0 +1,19 @@
+%html
+	%head
+		%title UReview
+		= stylesheet_link_tag 'application'
+		= javascript_include_tag 'application'
+		= csrf_meta_tags
+
+
+	%body
+		%header.navbar.navbar-fixed-top.navbar-inverse
+			.navbar-inner
+				.container
+					= link_to "UReview", '#', id: "logo"
+					%nav
+						%ul.nav.pull-right
+							%li= link_to "Home", '#'
+							%li= link_to "Sign_In", '#'
+		.container
+			= yield
