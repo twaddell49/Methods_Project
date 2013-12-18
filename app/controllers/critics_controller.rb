@@ -26,7 +26,15 @@ class CriticsController < ApplicationController
   # POST /critics.json
   def create
     @critic = Critic.new(params[:critic])
+    if @critic.save
+      sign_in @critic
+      redirect_to @critic
+    else
+      render 'new'
+    end
   end
+
+
 
   # PUT /critics/1
   # PUT /critics/1.json

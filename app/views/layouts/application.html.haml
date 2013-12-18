@@ -10,10 +10,23 @@
 		%header.navbar.navbar-fixed-top.navbar-inverse
 			.navbar-inner
 				.container
-					= link_to "UReview", '#', id: "logo"
+					= link_to "UReview", '/static_pages/home', id: "logo"
 					%nav
 						%ul.nav.pull-right
-							%li= link_to "Home", '#'
-							%li= link_to "Sign_In", '#'
+							%li= link_to "Home", root_path
+							- if signed_in?
+								%li= link_to "Critics", "#"
+								%li#fat-menu.dropdown
+									%a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+										Account
+										%b.caret
+									%ul.dropdown-menu
+										%li= link_to "Profile", current_critic
+										%li= link_to "Settings", '#'
+										%li.divider
+										%li
+											= link_to "Sign Out", signout_path, method: "delete"
+							- else
+								%li= link_to "Sign In", signin_path
 		.container
 			= yield
