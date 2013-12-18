@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  esrb: MyString
+  description: MyText
+  console: MyString
+  players: 1
+  image_location: MyString
+
+two:
+  title: MyString
+  esrb: MyString
+  description: MyText
+  console: MyString
+  players: 1
+  image_location: MyString

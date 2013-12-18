@@ -40,6 +40,11 @@ class CriticsController < ApplicationController
   # PUT /critics/1.json
   def update
     @critic = Critic.find(params[:id])
+    if @critic.update_attributes(params[:critic])
+      redirect_to @critic
+    else
+      render 'edit'
+    end
   end
 
   # DELETE /critics/1

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131218213838) do
+ActiveRecord::Schema.define(:version => 20131218234611) do
 
   create_table "critics", :force => true do |t|
     t.string   "name"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(:version => 20131218213838) do
 
   add_index "critics", ["email"], :name => "index_critics_on_email", :unique => true
   add_index "critics", ["remember_token"], :name => "index_critics_on_remember_token"
+
+  create_table "games", :force => true do |t|
+    t.string   "title"
+    t.string   "esrb"
+    t.text     "description"
+    t.string   "console"
+    t.integer  "players"
+    t.string   "image_location"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "reviews", :force => true do |t|
     t.string   "content"
