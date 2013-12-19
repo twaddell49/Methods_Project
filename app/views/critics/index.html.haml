@@ -1,0 +1,7 @@
+- provide(:title, 'All Critics')
+%h1 All Critics
+%ul.critics
+  - @critics.each do |critic|
+    %li
+      = avatar_for critic
+      = link_to critic.name, critic

@@ -34,8 +34,6 @@ class CriticsController < ApplicationController
     end
   end
 
-
-
   # PUT /critics/1
   # PUT /critics/1.json
   def update
