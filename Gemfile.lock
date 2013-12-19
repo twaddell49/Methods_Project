@@ -127,11 +127,10 @@ DEPENDENCIES
   haml
   jbuilder
   jquery-rails
-  pg (= 0.15.1)
+  pg
   rails (= 3.2.7)
-  rails_12factor (= 0.0.2)
+  rails_12factor
   sass-rails (~> 3.2.3)
   sdoc (= 0.3.20)
-  sqlite3
   turbolinks
   uglifier (>= 1.0.3)
