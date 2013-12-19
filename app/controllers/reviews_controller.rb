@@ -25,7 +25,12 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    @review = Review.new(params[:review])
+    @review = current_critic.reviews.build(params[:review])
+    if @review.save
+      redirect_to root_url
+    else
+      render 'static_pages/home'
+    end
   end
 
   # PUT /reviews/1
@@ -40,4 +45,10 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @review.destroy
   end
+
+  private
+
+    def review_params
+      params.require(:review).permit(:content)
+    end
 end

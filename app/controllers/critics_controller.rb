@@ -9,6 +9,7 @@ class CriticsController < ApplicationController
   # GET /critics/1.json
   def show
     @critic = Critic.find(params[:id])
+    @reviews = @critic.reviews
   end
 
   # GET /critics/new

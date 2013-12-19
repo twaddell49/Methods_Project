@@ -3,7 +3,7 @@ class Critic < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :remember_token
   before_save { self.email = email.downcase }
   before_create :create_remember_token
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL}, uniqueness: { case_sensitive: false }

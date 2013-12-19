@@ -1,0 +1,7 @@
+= link_to avatar_for(current_critic), current_critic
+%h1
+  = current_critic.name
+%span
+  = link_to "view my profile", current_critic
+%span
+  = pluralize(current_critic.reviews.count, "review")

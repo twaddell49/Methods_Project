@@ -4,7 +4,7 @@ UReview3::Application.routes.draw do
   get "static_pages/home"
   root to: 'static_pages#home'
   
-  resources :reviews
+  resources :reviews, only: [:create, :destroy]
   resources :critics
   resources :sessions, only: [:new, :create, :destory]
 

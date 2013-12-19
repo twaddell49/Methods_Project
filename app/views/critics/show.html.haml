@@ -5,3 +5,10 @@
 			%h1
 				= avatar_for @critic
 				= @critic.name
+	.span8
+		- if @critic.reviews.any?
+			%h3
+				Reviews (#{@critic.reviews.count})
+			%ol.reviews
+				= render @reviews
+      		
