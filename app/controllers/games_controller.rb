@@ -26,6 +26,7 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(params[:game])
+    @game.save
   end
 
   # PUT /games/1
