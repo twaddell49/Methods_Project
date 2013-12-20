@@ -1,0 +1,23 @@
+%h1 #{@game.title}
+
+%ul#details
+  =image_tag(@game.image_location)
+  %li
+    ESRB Rating:
+    = @game.esrb
+  %li
+    Console:
+    = @game.console
+  %li
+    Players:
+    = @game.players
+
+%h3 Description:
+
+%p#desciption= @game.description
+
+= link_to 'Edit Info', edit_game_path(@game)
+
+= button_to 'Delete', game_path(@game), :method => :delete, :confirm => 'Are you sure?'
+
+= link_to 'Back to Games', games_path

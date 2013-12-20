@@ -1,0 +1,7 @@
+- provide(:title, 'All Games')
+%h1 All Games
+%ul.critics
+  - @games.each do |game|
+    %li
+      = image_tag game.image_location, :height => "30%", :width => "30%"
+      = link_to game.title, game

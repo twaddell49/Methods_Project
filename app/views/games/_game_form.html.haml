@@ -1,0 +1,22 @@
+-unless @game.errors.empty?
+  #warning
+    Errors prevented this movie from being #{controller.action_name}d:
+    %ul
+      -@game.errors.full_messages.each do |error|
+        %li= error
+
+= label :game, :title, 'Title'
+= text_field :game, :title
+%p
+= label :game, :esrb, 'ESRB Rating'
+= text_field :game, :esrb
+%p
+
+= label :game, :console, 'Console'
+= text_field :game, :console
+%p
+= label :game, :players, 'Players'
+= text_field :game, :players
+%p
+= label :game, :description, 'Description'
+= text_field :game, :description

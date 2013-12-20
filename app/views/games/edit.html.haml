@@ -1,0 +1,6 @@
+%h2 Edit Game
+
+= form_tag game_path(@game), :method => :put do
+	= render :partial => 'game_form'
+
+	= submit_tag 'Update Info'
